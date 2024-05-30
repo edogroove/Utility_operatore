@@ -67,9 +67,9 @@ int	main(void)
 
 	while (1)
 	{
-		printf("---------------------------------------\n");
-		printf("Calcolatore per alesatori della 54 v1.0\n");
-		printf("---------------------------------------\n\n\n");
+		printf("----------------------------------------\n");
+		printf("Calcolatore per parametri di taglio v1.0\n");
+		printf("----------------------------------------\n\n\n");
 		printf("Scegli un'opzione:\n\n");
 		printf("1) Ottieni velocita' di taglio (m/min)\n");
 		printf("2) Ottieni avanzamento (mm/giro)\n");
