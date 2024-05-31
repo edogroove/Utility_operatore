@@ -42,7 +42,7 @@ void	av(void)
 	printf("Inserisci il numero dei taglienti: ");
 	scanf("%lf", &t);
 	ris = (f / s) / t;
-	printf("fz = %.3f mm/giro\n\n", ris);
+	printf("fz = %.3f mm/giro per tagliente\n\n", ris);
 	return ;
 }
 
@@ -68,12 +68,12 @@ int	main(void)
 	while (1)
 	{
 		printf("----------------------------------------\n");
-		printf("Calcolatore per parametri di taglio v1.0\n");
+		printf("Calcolatore per parametri di taglio v1.1\n");
 		printf("----------------------------------------\n\n\n");
 		printf("Scegli un'opzione:\n\n");
-		printf("1) Ottieni velocita' di taglio (m/min)\n");
-		printf("2) Ottieni avanzamento (mm/giro)\n");
-		printf("3) Ottieni n giri (giri/min)\n");
+		printf("1. Ottieni velocita' di taglio (m/min)\n");
+		printf("2. Ottieni avanzamento al tagliente (mm/giro)\n");
+		printf("3. Ottieni n giri (giri/min)\n");
 		printf("\n");
 		scanf("%d", &scelta);
 		if (scelta > 3 || scelta == 0)
