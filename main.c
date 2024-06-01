@@ -6,7 +6,7 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 15:26:58 by enanni            #+#    #+#             */
-/*   Updated: 2024/06/01 09:10:21 by enanni           ###   ########.fr       */
+/*   Updated: 2024/06/01 09:25:17 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	calc_av(void)
 
 	printf("Inserisci i giri: ");
 	scanf("%lf", &giri);
-	printf("Inserisci mm/giro: ");
+	printf("Inserisci avanzamento mm/giro: ");
 	scanf("%lf", &av);
 	ris = giri * av;
 	printf("F = %.2f\n\n", ris);
@@ -87,8 +87,8 @@ int	main(void)
 		printf("Scegli un'opzione:\n\n");
 		printf("1. Ottieni velocita' di taglio (m/min)\n");
 		printf("2. Ottieni avanzamento al tagliente (mm/giro)\n");
-		printf("3. Ottieni n giri (giri/min)\n\n");
-		printf("4. Calcola avanzamento\n");
+		printf("3. Calcola n giri (giri/min)\n");
+		printf("4. Calcola avanzamento (mm/giro)\n");
 		printf("\n");
 		scanf("%d", &scelta);
 		if (scelta > 4 || scelta == 0)
