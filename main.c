@@ -6,12 +6,26 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 15:26:58 by enanni            #+#    #+#             */
-/*   Updated: 2024/05/30 18:23:59 by enanni           ###   ########.fr       */
+/*   Updated: 2024/06/01 09:10:21 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+
+void	calc_av(void)
+{
+	double	giri;
+	double	av;
+	double	ris;
+
+	printf("Inserisci i giri: ");
+	scanf("%lf", &giri);
+	printf("Inserisci mm/giro: ");
+	scanf("%lf", &av);
+	ris = giri * av;
+	printf("F = %.2f\n\n", ris);
+}
 
 void	ss(void)
 {
@@ -68,15 +82,16 @@ int	main(void)
 	while (1)
 	{
 		printf("----------------------------------------\n");
-		printf("Calcolatore per parametri di taglio v1.1\n");
+		printf("Calcolatore per parametri di taglio v1.2\n");
 		printf("----------------------------------------\n\n\n");
 		printf("Scegli un'opzione:\n\n");
 		printf("1. Ottieni velocita' di taglio (m/min)\n");
 		printf("2. Ottieni avanzamento al tagliente (mm/giro)\n");
-		printf("3. Ottieni n giri (giri/min)\n");
+		printf("3. Ottieni n giri (giri/min)\n\n");
+		printf("4. Calcola avanzamento\n");
 		printf("\n");
 		scanf("%d", &scelta);
-		if (scelta > 3 || scelta == 0)
+		if (scelta > 4 || scelta == 0)
 			printf("Inserisci un numero valido...\n");
 		if (scelta == 1)
 			vt();
@@ -84,6 +99,8 @@ int	main(void)
 			av();
 		else if (scelta == 3)
 			ss();
+		else if (scelta == 4)
+			calc_av();
 		system("pause");
 		system("cls");
 	}
