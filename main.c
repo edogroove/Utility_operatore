@@ -6,12 +6,26 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 15:26:58 by enanni            #+#    #+#             */
-/*   Updated: 2024/06/01 09:25:17 by enanni           ###   ########.fr       */
+/*   Updated: 2024/06/04 22:13:06 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+
+void	calc_golf(void)
+{
+	double	diam;
+	double	gradi;
+	double	ris;
+
+	printf("Inserisci il diametro: ");
+	scanf("%lf", &diam);
+	printf("Inserisci i gradi: ");
+	scanf("%lf", &gradi);
+	ris = diam * 3.14159 / 360 * gradi;
+	printf("%.1fmm\n\n", ris);
+}
 
 void	calc_av(void)
 {
@@ -81,17 +95,18 @@ int	main(void)
 
 	while (1)
 	{
-		printf("----------------------------------------\n");
-		printf("Calcolatore per parametri di taglio v1.2\n");
-		printf("----------------------------------------\n\n\n");
+		printf("----------------------\n");
+		printf("Utility operatore v1.3\n");
+		printf("----------------------\n\n\n");
 		printf("Scegli un'opzione:\n\n");
 		printf("1. Ottieni velocita' di taglio (m/min)\n");
 		printf("2. Ottieni avanzamento al tagliente (mm/giro)\n");
 		printf("3. Calcola n giri (giri/min)\n");
 		printf("4. Calcola avanzamento (mm/giro)\n");
+		printf("5. Calcolo distanza del golfare di riferimento\n");
 		printf("\n");
 		scanf("%d", &scelta);
-		if (scelta > 4 || scelta == 0)
+		if (scelta > 5 || scelta == 0)
 			printf("Inserisci un numero valido...\n");
 		if (scelta == 1)
 			vt();
@@ -101,6 +116,8 @@ int	main(void)
 			ss();
 		else if (scelta == 4)
 			calc_av();
+		else if (scelta == 5)
+			calc_golf();
 		system("pause");
 		system("cls");
 	}
