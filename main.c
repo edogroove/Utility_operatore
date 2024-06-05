@@ -6,12 +6,35 @@
 /*   By: enanni <enanni@student.42firenze.it>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 15:26:58 by enanni            #+#    #+#             */
-/*   Updated: 2024/06/04 22:13:06 by enanni           ###   ########.fr       */
+/*   Updated: 2024/06/05 02:57:02 by enanni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+
+void	calc_tutto(void)
+{
+	double	vt;
+	double	fz;
+	double	tagl;
+	double	diam;
+	double	s;
+	double	f;
+
+	printf("Inserisci la velocita' di taglio desiderata: ");
+	scanf("%lf", &vt);
+	printf("Inserisci l'avanzamento a tagliente desiderato: ");
+	scanf("%lf", &fz);
+	printf("Inserisci il numero dei taglienti: ");
+	scanf("%lf", &tagl);
+	printf("Inserisci il diametro: ");
+	scanf("%lf", &diam);
+	s = vt * 1000 / (diam * 3.14159);
+	f = fz * tagl * s;
+	printf("giri S: %.2f\n", s);
+	printf("avanzamento F: %.2f\n", f);
+}
 
 void	calc_golf(void)
 {
@@ -24,7 +47,7 @@ void	calc_golf(void)
 	printf("Inserisci i gradi: ");
 	scanf("%lf", &gradi);
 	ris = diam * 3.14159 / 360 * gradi;
-	printf("%.1fmm\n\n", ris);
+	printf("Distanza dal golfare: %.1f mm\n\n", ris);
 }
 
 void	calc_av(void)
@@ -99,14 +122,15 @@ int	main(void)
 		printf("Utility operatore v1.3\n");
 		printf("----------------------\n\n\n");
 		printf("Scegli un'opzione:\n\n");
-		printf("1. Ottieni velocita' di taglio (m/min)\n");
-		printf("2. Ottieni avanzamento al tagliente (mm/giro)\n");
-		printf("3. Calcola n giri (giri/min)\n");
-		printf("4. Calcola avanzamento (mm/giro)\n");
-		printf("5. Calcolo distanza del golfare di riferimento\n");
+		printf("1. Ottieni velocita' di taglio vt (m/min)\n");
+		printf("2. Ottieni avanzamento al tagliente fz (mm/giro)\n");
+		printf("3. Calcola n giri S (giri/min)\n");
+		printf("4. Calcola avanzamento F (mm/giro)\n");
+		printf("5. Ricava tutti i parametri\n");
+		printf("6. Calcolo distanza del golfare di riferimento\n");
 		printf("\n");
 		scanf("%d", &scelta);
-		if (scelta > 5 || scelta == 0)
+		if (scelta > 6 || scelta == 0)
 			printf("Inserisci un numero valido...\n");
 		if (scelta == 1)
 			vt();
@@ -117,6 +141,8 @@ int	main(void)
 		else if (scelta == 4)
 			calc_av();
 		else if (scelta == 5)
+			calc_tutto();
+		else if (scelta == 6)
 			calc_golf();
 		system("pause");
 		system("cls");
