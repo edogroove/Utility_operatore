@@ -128,9 +128,10 @@ int	main(void)
 		printf("4. Calcola avanzamento F (mm/giro)\n");
 		printf("5. Ricava tutti i parametri\n");
 		printf("6. Calcolo distanza del golfare di riferimento\n");
+		printf("7. Esci\n");
 		printf("\n");
 		scanf("%d", &scelta);
-		if (scelta > 6 || scelta == 0)
+		if (scelta > 7 || scelta == 0)
 			printf("Inserisci un numero valido...\n");
 		if (scelta == 1)
 			vt();
@@ -144,6 +145,8 @@ int	main(void)
 			calc_tutto();
 		else if (scelta == 6)
 			calc_golf();
+		else if (scelta == 7)
+			exit(0);
 		system("pause");
 		system("cls");
 	}
